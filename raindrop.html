@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -30,13 +30,18 @@
             measurementId: "G-PW3FMM9D9K"
             
           };
-        
+          const db = firebase.database();
+           const ref = db.ref("app.js");
+
           // Initialize Firebase
           const app = initializeApp(firebaseConfig);
           const analytics = getAnalytics(app);
+          database.ref('test').set('Hello, Firebase!');
+
         </script> 
   </head>
   <body>
-      
+    <h1>Welcome to my Firebase app!</h1>
+
   </body>
   </html>
