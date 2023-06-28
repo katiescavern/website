@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vice dice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gender">
+        <h1>select your gender &#40; good boy, good girl, good sub &#41;</h1>
+        <button onclick="gender(1)">masc</button>
+        <button onclick="gender(2)">fem</button>
+        <button onclick="gender(3)">non binary</button>
+    </div>
+    <div id="dice">
+        <button onclick="noDice(4)">D4</button>
+        <button onclick="noDice(6)">D6</button>
+        <button onclick="noDice(8)">D8</button>
+        <button onclick="noDice(12)">D12</button>
+        <button onclick="noDice(20)">D20</button>
+        <button onclick="noDice(100)">D100</button>
+        <h1 id="result"></h1>
+        <h1 id="dirtyTalk"></h1>
+
+    </div>
+    <script src="dice.js"></script>
+</body>
+</html>
