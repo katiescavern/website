@@ -30,6 +30,7 @@ const infoElement = document.getElementById("info");
 const buttonElement = document.getElementById("buttons");
 const selchick1 = document.getElementById("selChick1");
 const selchick2 = document.getElementById("selChick2");
+const chickenCElement = document.getElementById("chickenCount");
 //element things
 everything.style.display = "none";
 
@@ -43,6 +44,8 @@ function start(){
 	everything.style.display = "block";
 	infoElement.style.display = "none";
 	buttonElement.style.display = "none";
+	randomChicken();
+	randomChicken();
 	randomChicken();
 	randomChicken();
 	chickenRefresh();
