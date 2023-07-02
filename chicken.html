@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>chicken</title>
+	<link rel="stylesheet" href="chicken.css" />
+
+</head>
+<body>
+	<div id="startScreen">
+		<h1>welcome to chicken farming!</h1>
+		<h4>this is a test project for a feature i'm interested in playing around with</h4>
+		<p>your task is to breed the ultimate chicken!</p>
+		<p>warning: it would be an understatement to call this a simplification of DNA, but i don't have a PhD (yet) and neither do you (hopefully) so let's just have some fun!</p>
+		<button onclick="start()">start game</button>
+	</div>
+	<div id="everything">
+		<div id="coup">
+			<h1 id=chickenCount>chicken count:</h1>
+			<p id="chickenInfo">they are cool</p>
+			<div id=actualCoop>
+				<h1>test</h1>
+			</div>
+		</div>
+		<div id="info">
+			<h1 id="name"></h1>
+			<p id="DNA"></p>
+			<h2>egg laying</h2>
+			<h3 id="eggPoints"></h3>
+			<h4 id="eggString"></h4>
+			<h2>quality</h2>
+			<h3 id="pricePoints"></h3>
+			<h4 id="priceString"></h4>
+			<h2>size</h2>
+			<h3 id="sizePoints"></h3>
+			<h4 id="sizeString"></h4>
+			<h2>beauty</h2>
+			<h3 id="beautyPoints"></h3>
+			<h4 id="beautyString"></h4> 
+			<h2>sex</h2>
+			<h3 id="sex"></h3>
+			<h2>age</h2>
+			<h3 id="age"></h3>
+			</div>
+		<div id = buttons>
+			<button onclick="breed()">breed</button>
+		</div>
+		<div id="bottom">
+			<h3 id="selChick1"></h3>
+			<h3 id="selChick2"></h3>
+		</div>	
+	</div>
+	<script src="chick.js"></script>
+</body>
+</html>
