@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Finder</title>
+</head>
+<body>
+    <h1>Prime Number Finder</h1>
+    <p>Current Number Being Checked: <span id="currentNumber">2</span></p>
+    <p>Last 10 Primes Found: <span id="primeList"></span></p>
+    <p>Number of Primes Found: <span id="NP">0</span></p>
+    <p>Primes Found per Second: <span id="primesPerSecond">0</span></p>
+    <button onclick="button()">click!</button>
+    
+    <script>
+        const CNID = document.getElementById("currentNumber");
+        const PLID = document.getElementById("primeList");
+        const NPID = document.getElementById("NP");
+        const PPSID = document.getElementById("primesPerSecond");
+        var primes = [];
+        let y = 0;
+        let x = 100;
+        var primeCount = 0;
+        var startTime, endTime, timeElapsed;
+
+        function button(){ 
+          y = x;
+          x = x*x*x*x*x*x*x*x*x*x*x;
+          find(y, x);
+        }
+
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function find(y, x) {
+            primeCount = 0;
+            primes = [];
+            startTime = performance.now(); // Start the timer
+
+            let i = y;
+            const interval = setInterval(() => {
+                CNID.textContent = i;
+                if (isPrime(i)) {
+                    primes.push(i);
+                    let last10 = primes.slice(-10);
+                    PLID.textContent = last10;
+                    console.log(i);
+                    primeCount++;
+                    NPID.textContent = primeCount;
+                    endTime = performance.now(); // Update endTime every time a prime is found
+                    timeElapsed = (endTime - startTime) / 1000; // Calculate time elapsed since starting
+                    const primesPerSecond = (primeCount / timeElapsed).toFixed(2);
+                    PPSID.textContent = primesPerSecond; // Update Primes Found per Second value
+                }
+                i++;
+                if (i > x) {
+                    clearInterval(interval); // Stop the interval when the loop is done
+                }
+            }, 0.00001); // Add a delay of 100 milliseconds between each iteration
+        }
+
+        find(y, x);
+    </script>
+</body>
+</html>
