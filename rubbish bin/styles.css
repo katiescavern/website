@@ -1,0 +1,50 @@
+#intro {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+.collapsible{
+ background-color: gray;
+ color: white;
+ cursor: pointer;
+ padding: auto;
+ font-size: 15 px;
+ text-align: center;
+}
+
+.active, .collapsible:hover {
+    background-color: white;
+    color: black;
+}
+
+.lore {
+    padding: 0 18px;
+    display: none;
+}
+#exitButton {
+    display: none;
+    opacity: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: auto;
+    font-size: 15 px;
+    text-align: center;
+}
+
+#naming {
+    display: none;
+}
+
+#elseAlpha {
+    display: none;
+}
