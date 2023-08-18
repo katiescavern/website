@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messier 52</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div id="intro">
+        <h1>you are about to enter the age of space exploration.</h1>
+        <button type="button" class="collapsible">Your mission...</button>
+        <div class="lore">
+        <h4>countless cosmonauts enter the void of space, most are never heard from again.</h4>
+        <h4>in the past only those who were stupid enough to die for a lifeless rock presued the cosmos.</h4>
+        <h4>but times have changed... desperate times calls for desperate messures...</h4>
+        <h4>you have been chosen by a lottery, to be a cosmonaut.</h4>
+        <h4>the Orion Spur is running out of resourses at an alarming rate</h4>
+        <h4>your home system was never rich to begin with, and some of the last of it's resources have been sold to the LIC</h4>
+        <h4>you need to find a home, and construct a wormhole gate to save your people.</h4>
+        <button onclick="startGame()">enter your spaceship</button>
+        </div>
+    </div>
+    <button id="exitButton" onclick="exit()">Exit your spacecraft</button>
+
+    <div id="menu">
+        
+    </div>
+    <div id="Alpha">
+        <div id="naming">
+            <h1>you land on a planet</h1>
+            <h3>info:</h3>
+            <p>rich in iron, red hue, tempurature habitable, atmosphere dense in CO2</p>
+            <input type="text" id="alphaInput" placeholder="name your planet">
+            <button id="aNameButton" onclick="aInput()">enter</button>
+        </div>
+        <div id="elseAlpha">
+            <h1>end of content</h1>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
