@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi ben</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #1abc9c, #f1c40f, #3498db);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        @keyframes rainbow {
+            0% { color: #ffd700; }
+            16.67% { color: #ffd700; }
+            33.33% { color: #ffd700; }
+            50% { color: #7fff00; }
+            66.67% { color: #1e90ff; }
+            83.33% { color: #8a2be2; }
+            100% { color: #ee82ee; }
+        }
+        #hi {
+            animation: rainbow 5s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="hi"></h1>
+    </div>
+    <script>
+        const hi = document.getElementById("hi");
+
+        function hello(){
+            let x = Math.floor(Math.random() * 100);
+            if (x < 70){
+                hi.textContent = "hi ben";
+            } else if (x < 97){
+                hi.innerHTML = "WAKE UP WAKE UP WAKE UP YOU'RE DREAMING YOUR ENTIRE LIFE IS A LIE WAKE UP BENJAMIN JAMES TARLING";
+            } else {
+                hi.textContent = "joe biden";
+            }
+        }
+        setInterval(hello, 1000);
+    </script>
+</body>
+</html>
