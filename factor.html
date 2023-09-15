@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FFD700, #FFA500);
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+    
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #credit {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="form" min="1" value="0">
+        <button onclick="submit()">submit</button>
+        <p id="warn"></p>
+        <p id="ele"></p>
+    </div>
+    <p id="credit">made by Katie McTavish</p>
+    <script>
+
+const ele = document.getElementById("ele");
+const warn = document.getElementById("warn");
+var input;
+var mal;
+var factors = [];
+
+    function div(){
+        let check = 0;
+        for (let i = 2; i < (mal/2)+1; i++){
+            if (mal%i == 0 && i>1 && i != mal && check == 0){
+                mal = mal/i;
+                factors.push(i);
+                check = 1;
+                break;
+            }
+        }
+
+        if (check == 0){
+            if (mal == input){
+                ele.textContent = `${input} is a prime number.`;
+            } else {
+                factors.push(mal);
+            ele.textContent = factors;
+            }
+        } else {
+            div();
+        }
+    }
+
+function submit(){
+    factors = [];
+    input = document.getElementById("form").value;
+    if (input < 1){
+        warn.textContent = "not a natural number";
+    } else {
+        mal = input;
+        div();
+    }
+}
+    </script>
+</body>
+</html>
