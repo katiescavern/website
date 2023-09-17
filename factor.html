@@ -40,15 +40,25 @@
         <button onclick="submit()">submit</button>
         <p id="warn"></p>
         <p id="ele"></p>
+        <h4>sqaures:</h4>
+        <p id="squares"></p>
+        <h4>cubes</h4>
+        <p id="cubes"></p>
+        <h4>more perfects</h4>
+        <p id="other"></p>
     </div>
     <p id="credit">made by Katie McTavish</p>
     <script>
-
+        
 const ele = document.getElementById("ele");
 const warn = document.getElementById("warn");
 var input;
 var mal;
 var factors = [];
+var array = [];
+const sqaures = document.getElementById("squares");
+const cubes = document.getElementById("cubes");
+const other = document.getElementById("other");
 
     function div(){
         let check = 0;
@@ -65,7 +75,9 @@ var factors = [];
             if (mal == input){
                 ele.textContent = `${input} is a prime number.`;
             } else {
-                factors.push(mal);
+             
+            factors.push(mal);
+            isolate(factors);
             ele.textContent = factors;
             }
         } else {
@@ -80,9 +92,107 @@ function submit(){
         warn.textContent = "not a natural number";
     } else {
         mal = input;
+        sqaures.textContent = "";
+        cubes.textContent = "";
+        other.textContent = "";
         div();
     }
 }
+
+class num {
+    constructor(num, reps) {
+        
+        this.num = num;
+        this.reps = reps;
+    }
+
+    get perfect() {
+        return this.calc();
+    }
+
+    calc() {
+        return this.num ** this.reps;
+    }
+}
+
+let objs = [];
+
+    function isolate(array){
+        console.log(array);
+        let single = [];
+        single.push(array[0]);
+        let len = array.length;
+        for (let i = 0; i < len; i++){
+            let count = 0;
+            for (let j = 0; j < single.length; j++){
+                if (single[j] == array[i]){
+                    count++;
+                    break;
+                }
+            }
+            if (count == 0){
+                single.push(array[i]);
+            }
+        }
+        factory(single, array);
+        console.log(single, array);
+    }
+
+
+  function factory(single, x){
+        console.log(single, x);
+        objs = [];
+        for (let i = 0; i < single.length; i++){
+            let count = 0;
+            console.log(single[i]);
+            for (let j = 0; j <x.length; j++){
+                console.log(x[j]);
+                if (single[i] == x[j]){
+                    count++;
+                    console.log(j);
+                }
+            }
+        console.log(count);
+        let perf = new num(single[i], count);
+        objs.push(perf);
+    }
+        
+        for (let i = 0; i < objs.length; i++){
+            console.log(objs[i].perfect);
+        }
+
+        disPerfect(objs);
+}
+
+
+
+    function disPerfect(objs){
+        let s = [];
+        let c = [];
+        let o = [];
+        for (let i = 0; i < objs.length; i++){
+            let object = objs[i];
+            if (object.reps == 2){
+                s.push(object.perfect);
+                console.log(s);
+            } else if (object.reps == 3){
+                c.push(object.perfect);
+            } else if (object.reps > 3){
+                let temp = `${object.perfect} (${object.num}^${object.reps})`
+                o.push(temp);
+                console.log(o);
+            }
+        }
+        if (s.length > 0){
+            sqaures.textContent = s;   
+        }
+        if (cubes.length > 0){
+            cubes.textContent = c;
+        }
+        if (o.length > 0){
+            other.textContent = o;
+        }
+    }
     </script>
 </body>
 </html>
